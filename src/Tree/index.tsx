@@ -1,3 +1,3 @@
 export const Tree = () => {
-  return <>Tree</>
-}
+  return <>Tree</>;
+};
