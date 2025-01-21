@@ -15,9 +15,7 @@ export function EditModal() {
   const change = useTreeChange();
 
   const submit = (value: string) =>
-    change(async () => {
-      await treeApi.renameNode(modalData.nodeId, value);
-    });
+    change(async () => await treeApi.renameNode(modalData.nodeId, value));
 
   return (
     <Modal title="Rename" opened handleCancel={() => openModal(null)}>

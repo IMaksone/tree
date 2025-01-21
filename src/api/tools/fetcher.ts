@@ -14,14 +14,16 @@ export async function fetcher(endpoint: string, { params }: FetcherOptions) {
   const options = new Options();
 
   try {
-    const data = await fetch(url, options).then(
-      (response) => response.json()
-    );
+    const res = await fetch(url, options).then((res) => {
+      if (res.status >= 300) throw new Error();
 
-    return data;
+      return res;
+    });
+
+    return res;
   } catch (err) {
     console.error("***API ERROR***", endpoint, err);
-  }
 
-  return null;
+    throw err;
+  }
 }

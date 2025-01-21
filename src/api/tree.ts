@@ -8,7 +8,7 @@ const RENAME_NODE_ENDPOINT = "/api.user.tree.node.rename";
 const getTree = async () =>
   fetcher(GET_TREE_ENDPOINT, {
     params: { treeName: process.env.REACT_APP_TREE_NAME },
-  });
+  }).then((res) => res.json());
 
 const createNode = async (parentNodeId: number, nodeName: string) =>
   fetcher(CREATE_NODE_ENDPOINT, {

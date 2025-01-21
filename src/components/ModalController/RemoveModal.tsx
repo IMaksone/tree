@@ -15,9 +15,7 @@ export function RemoveModal() {
   const change = useTreeChange();
 
   const submit = () =>
-    change(async () => {
-      await treeApi.deleteNode(modalData.nodeId);
-    });
+    change(async () => await treeApi.deleteNode(modalData.nodeId));
 
   return (
     <Modal title="Remove" opened handleCancel={() => openModal(null)}>

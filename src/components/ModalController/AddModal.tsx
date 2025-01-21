@@ -15,9 +15,7 @@ export function AddModal() {
   const change = useTreeChange();
 
   const submit = (value: string) =>
-    change(async () => {
-      await treeApi.createNode(modalData.parentNodeId, value);
-    });
+    change(async () => await treeApi.createNode(modalData.parentNodeId, value));
 
   return (
     <Modal title="Add" opened handleCancel={() => openModal(null)}>
