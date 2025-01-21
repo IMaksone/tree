@@ -16,7 +16,7 @@ export function EditModal() {
 
   const submit = (value: string) =>
     change(async () => {
-      await treeApi.renameNode(modalData.parentNodeId, value);
+      await treeApi.renameNode(modalData.nodeId, value);
     });
 
   return (

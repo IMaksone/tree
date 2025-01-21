@@ -16,7 +16,7 @@ export function RemoveModal() {
 
   const submit = () =>
     change(async () => {
-      await treeApi.deleteNode(modalData.parentNodeId);
+      await treeApi.deleteNode(modalData.nodeId);
     });
 
   return (

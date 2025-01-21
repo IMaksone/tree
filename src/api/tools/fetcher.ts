@@ -14,7 +14,9 @@ export async function fetcher(endpoint: string, { params }: FetcherOptions) {
   const options = new Options();
 
   try {
-    const data = await fetch(url, options).then((response) => response?.json());
+    const data = await fetch(url, options).then(
+      (response) => response.json()
+    );
 
     return data;
   } catch (err) {
