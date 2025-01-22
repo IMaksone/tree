@@ -1,4 +1,8 @@
+This was a test task. The conditions required:
 
+- create your own version of an editable tree
+- connect to rest api
+- make a modal window and logic for working with the tree
 
 ## Available Scripts
 
