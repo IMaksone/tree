@@ -1,4 +1,4 @@
-import { createUrlStringWithParams } from "./createUrlWithParams";
+import { createProxiedUrlStringWithParams } from "./createProxedUrlStringWithPrams";
 import { Options } from "./Options";
 
 type FetcherOptions = {
@@ -6,7 +6,7 @@ type FetcherOptions = {
 };
 
 export async function fetcher(endpoint: string, { params }: FetcherOptions) {
-  const url = createUrlStringWithParams(
+  const proxied = createProxiedUrlStringWithParams(
     process.env.REACT_APP_API_URL + endpoint,
     params
   );
@@ -14,7 +14,7 @@ export async function fetcher(endpoint: string, { params }: FetcherOptions) {
   const options = new Options();
 
   try {
-    const res = await fetch(url, options).then((res) => {
+    const res = await fetch(proxied, options).then((res) => {
       if (res.status >= 300) throw new Error();
 
       return res;
