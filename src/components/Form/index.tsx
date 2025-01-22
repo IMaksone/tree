@@ -21,7 +21,7 @@ export function Form({ title, submitTitle, submit }: FormProps) {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
       <Input title={title} value={value} onChange={handleChange} />
       <Button handleClick={handleClick}>{submitTitle}</Button>
     </div>
