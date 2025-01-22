@@ -1,6 +1,6 @@
 import {
   PlusCircleOutlined,
-  DeleteOutlined,
+  DeleteTwoTone,
   EditOutlined,
 } from "@ant-design/icons";
 import { Button } from "components/Button";
@@ -56,7 +56,7 @@ export function RemoveButton({ nodeId }: RemoveButtonProps) {
 
   return (
     <Button handleClick={handleClick}>
-      <DeleteOutlined />
+      <DeleteTwoTone twoToneColor="#FF0000" />
     </Button>
   );
 }
